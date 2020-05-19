@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import history from './history';
 
 import { signOut } from '../store/modules/auth/actions';
@@ -16,7 +17,7 @@ api.interceptors.response.use(
   },
   error => {
     if (error.response.status === 401) {
-      history.push('/404');
+      history.push('/');
     }
   }
 );
